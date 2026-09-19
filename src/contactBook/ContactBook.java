@@ -108,8 +108,9 @@ public class ContactBook {
         //Compare two contacts.getPhone().
         // Return true if they're equal
         for(int i=0; i<counter; i++){
+            int phone= contacts[i].getPhone();
             for(int j=i+1; j<counter; j++){
-                if(contacts[i].getPhone() == contacts[j].getPhone()){
+                if(contacts[j].getPhone() == phone){
                     return true;
                 }
             }
