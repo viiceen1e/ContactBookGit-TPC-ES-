@@ -26,6 +26,8 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+    public static final String PHONE_NUMBER_DOESNT_EXIST ="Phone number does not exist.";
+
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -55,8 +57,8 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
-                case GET_NAME;
-                     getName();
+                case GET_NAME:
+                     getName(in,cBook);
                      break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -153,11 +155,12 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
 
-    private static String getName(Scanner in, ContactBook cBook){
+    private static void getName(Scanner in, ContactBook cBook){
       int phone = in.nextInt();
-      String contact = getContact(phone);
-      if(contact == null)
-
-
+      Contact c = cBook.getContact(phone);
+      if(c == null)
+          System.out.println(PHONE_NUMBER_DOESNT_EXIST);
+      else
+          System.out.println(c.getName() + "; " + c.getEmail() + "; " + c.getPhone());
     }
 }
