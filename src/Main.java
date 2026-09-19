@@ -161,6 +161,6 @@ public class Main {
       if(c == null)
           System.out.println(PHONE_NUMBER_DOESNT_EXIST);
       else
-          System.out.println(c.getName() + "; " + c.getEmail() + "; " + c.getPhone());
+          System.out.println(c.getName() );
     }
 }
