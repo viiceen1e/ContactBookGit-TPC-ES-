@@ -103,4 +103,18 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    //Method that checks if two contacts have the same phone number
+    public boolean hasRepeatedContacts(){
+        //Compare two contacts.getPhone().
+        // Return true if they're equal
+        for(int i=0; i<counter; i++){
+            for(int j=i+1; j<counter; j++){
+                if(contacts[i].getPhone() == contacts[j].getPhone()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
