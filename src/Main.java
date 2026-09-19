@@ -164,6 +164,7 @@ public class Main {
 
     private static void getName(Scanner in, ContactBook cBook){
       int phone = in.nextInt();
+      in.nextLine();
       Contact c = cBook.getContact(phone);
       if(c == null)
           System.out.println(PHONE_NUMBER_DOESNT_EXIST);
